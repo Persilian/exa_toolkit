@@ -4,7 +4,7 @@
 #===Search for specific transcripts in the 2ndSE >2-fold DEG dataset===#
 #Also extracts the DEG along with their expression data
 #USE: source exa.DEG.sh {searchterm}
-#REQUIRES: a matrix with differentially expressed genes, here 2ndSE_2-fold_DEG_results_combined.data
+#REQUIRES: a matrix with differentially expressed genes, new 2ndSE_2-fold_DEG_CORRECTED_combined.data.txt
 #Marc Beringer 2020b
 
 ###parameters
@@ -15,15 +15,15 @@ searchterm=$1
 short=$(echo "${searchterm}" | sed "s/_transcripts.txt//")
 
 #extract the header
-head -n1 2ndSE_2-fold_DEG_results_combined.data | cut -f5,6 --complement > header.temp
+head -n1 2ndSE_2-fold_DEG_CORRECTED_combined.data.txt | cut -f5,6 --complement > header.temp
 
 #extract transcripts related to search term
 #the search term can be a regular file or a string, files are by default converted by dos2unix
 if [ -f "${searchterm}" ]; then
         dos2unix -q ${searchterm}
-        grep -f ${searchterm} 2ndSE_2-fold_DEG_results_combined.data | cut -f5,6 --complement > deg.temp
+        grep -f ${searchterm} 2ndSE_2-fold_DEG_CORRECTED_combined.data.txt | cut -f5,6 --complement > deg.temp
 else
-        grep "${searchterm}" 2ndSE_2-fold_DEG_results_combined.data | cut -f5,6 --complement > deg.temp
+        grep "${searchterm}" 2ndSE_2-fold_DEG_CORRECTED_combined.data.txt | cut -f5,6 --complement > deg.temp
 fi
 
 #concatenate the result
