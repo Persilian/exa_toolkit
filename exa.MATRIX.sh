@@ -10,6 +10,7 @@
 
 ###parameters
 searchterm=$1
+matrix=$(echo "net5_adjacency_matrix.txt")
 ###
 
 #shorten ${searchterm} for convenience
@@ -19,9 +20,9 @@ short=$(echo "${searchterm}" | sed "s/.txt//")
 #the search term can be a regular file or a string, files are by default converted by dos2unix
 if [ -f "${searchterm}" ]; then
         dos2unix -q ${searchterm}
-        grep -f ${searchterm} net5_adjacency_matrix.txt > submatrix1.temp
+        grep -f ${searchterm} ${matrix} > submatrix1.temp
 else
-        grep "${searchterm}" net5_adjacency_matrix.txt > submatrix1.temp
+        grep "${searchterm}" ${matrix} > submatrix1.temp
 fi
 
 #transpose the concatenated submatrix1.temp
