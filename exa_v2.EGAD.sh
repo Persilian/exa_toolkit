@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-#======================================== exa_v2.EGAD.sh ====================================================#
-#===Extract transcript GO-term annotation entries from any trinotate.xls annotation report===#
+#======================================== exa_v2.EGAD.sh ========================================================#
+#===Extract transcript GO-term annotation and KEGG annotation entries from any trinotate.xls annotation report===#
 #Extract transcripts and their associated GO-terms
 #USE: source exa.EGAD.sh {searchterm} {trinotate}
 #Requires list of transcripts
