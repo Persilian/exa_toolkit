@@ -1,7 +1,8 @@
 #===================================== exa_v2.MATRIX.sh ==========================================#
 #================ Extract submatrices from any PROCESSED WGCNA adjacency matrix ===============#
 #USE: source exa.MATRIX.sh {searchterm} {matrix}
-#Requires a symmetric matrix, where the searchterm is a list or single rownames of the matrix
+#Requires a processed adjacency matrix with a .txt file extension, where the first column header has been changed from empty to "gene", or "transcript.
+#The searchterm is a list of rownames (genes/transcripts) of the matrix
 #Marc Beringer 2020e_v2
 
 ###parameters
